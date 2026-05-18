@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/assets/img/pescado.png" type="image/x-icon">
+    <title>Atlas de Peces — Acuario Pira Renda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/atlas.css">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="header">
+        <a href="index.html" class="logo-container">
+            <img src="./assets/img/logo-acuario.png" alt="Acuario Pira Renda Logo" class="main-logo">
+        </a>
+        <button type="button" class="menu-toggle" id="mobile-menu" aria-label="Abrir menú">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="nav-container" aria-label="Menú principal">
+            <ul id="navbar" class="navbar">
+                <li><a href="/tienda.html">Tienda</a></li>
+                <li><a href="/atlas.html" class="active">Atlas</a></li>
+                <li><a href="/guia.html">Guía</a></li>
+                <li><a href="/productos_info.html">Productos</a></li>
+                <li><a href="/acerca_de.html">Acerca de</a></li>
+                <li class="nav-dropdown">
+                    <a href="/atencion_cliente.html" class="dropdown-toggle">Atención al cliente</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/faq.html">FAQ</a></li>
+                        <li><a href="/envio.html">Envío y devoluciones</a></li>
+                    </ul>
+                </li>
+                <li><a href="/contacto.html">Contacto</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" onclick="alert('🚧 Página en construcción. ¡Próximamente podras disfrutar de este servicio!'); return false;"><i class="fa-solid fa-user"></i> Entrar</a>
+                <div class="social-cart-group">
+                    <a href="https://www.facebook.com/" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtu.be/r0_w_B4CiKk?si=z0jr0orjIwkdNP1f" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="/carrito.html" class="cart-link">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="atlas-main">
+        <!-- MIGA DE PAN -->
+        <nav aria-label="Miga de pan" class="breadcrumb">
+            <a href="/index.html">Inicio</a>
+            <span class="sep">›</span>
+            <span class="bc-current">Atlas</span>
+        </nav>
+        <div class="atlas-layout">
+
+            <!-- SIDEBAR -->
+            <aside class="atlas-sidebar">
+                <h1>Listado Peces</h1>
+                <p class="atlas-filtro-label">Filtrar por tipo de agua</p>
+                <div class="atlas-chips">
+                    <button type="button" class="btn-outline active" data-tipo="todos">Todos</button>
+                    <button type="button" class="btn-outline" data-tipo="dulce">Agua Dulce</button>
+                    <button type="button" class="btn-outline" data-tipo="salada">Agua Salada</button>
+                    <button type="button" class="btn-outline" data-tipo="tropical">Tropicales</button>
+                    <button type="button" class="btn-outline" data-tipo="caracol">Caracoles</button>
+                    <button type="button" class="btn-outline" data-tipo="axolote">Axolotes</button>
+                </div>
+                <button type="button" class="btn-carrito" onclick="resetFiltro()">Restablecer filtros</button>
+            </aside>
+
+            <!-- GRID DE PECES -->
+            <section class="atlas-grid">
+
+                <!-- AGUA DULCE -->
+                <article class="pez-card" data-tipo="dulce">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/427f9c_4af0d6d33af74ee4ba1ed6ce908d5924~mv2.jpg/v1/fill/w_446,h_450,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/corydora-aeneus-bronce.jpg"
+                            alt="Basurero - Corydora Aeneus">
+                    </div>
+                    <h3>Basurero - Corydora Aeneus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'basurero')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="dulce">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/427f9c_40f263dfd56145899d8636cff4478728~mv2.jpg/v1/fill/w_312,h_315,al_c,lg_1,q_80,enc_avif,quality_auto/Hemigrammus%20rhodostomus.jpg"
+                            alt="Borrachito - Hemigrammus rhodostomus">
+                    </div>
+                    <h3>Borrachito - Hemigrammus rhodostomus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'borrachito')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="dulce">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/427f9c_84ef880bb2f547a0aa1ad2794a1bb8f0~mv2.jpg/v1/fill/w_446,h_450,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Xiphophorus%20helleri.jpg"
+                            alt="Xipho - Xiphophorus helleri">
+                    </div>
+                    <h3>Xipho - Xiphophorus helleri</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'xipho')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="dulce">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/427f9c_c3fc5ebd8ee34f66ac6f8dc4d2dacf81~mv2.jpg/v1/fill/w_446,h_450,al_c,lg_1,q_80,enc_avif,quality_auto/gurami-perla.jpg"
+                            alt="Gurami Perla">
+                    </div>
+                    <h3>Gurami Perla - Trichogaster leerii</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'gurami')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="dulce">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/427f9c_f0cd1cb8620a46489dbdbd367372cfed~mv2.png/v1/fill/w_446,h_450,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ancistrus-macho_edited.png"
+                            alt="Ancistrus">
+                    </div>
+                    <h3>Ancistrus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'ancistrus')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="dulce">
+                    <div class="pez-img">
+                        <img src="https://acuarioguppy.com/wp-content/uploads/2025/09/pez-limpiafondos-hypostomus-plecostomus-pareja.jpeg"
+                            alt="Pleco">
+                    </div>
+                    <h3>Pleco - Hypostomus plecostomus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'pleco')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="dulce">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/427f9c_694346e79deb4f0ba91414070af9d01b~mv2.jpg/v1/fill/w_341,h_197,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/guppy.jpg"
+                            alt="Guppy">
+                    </div>
+                    <h3>Guppy - Poecilia reticulata</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'guppy')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="dulce">
+                    <div class="pez-img">
+                        <img src="https://plantasacuario.es/902-large_default/platy-variado-xiphophorus-maculatus.webp"
+                            alt="Platy">
+                    </div>
+                    <h3>Platy - Xiphophorus maculatus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'platy')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="dulce">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/427f9c_c061c34d546d4358b2b3d65572ce90f5~mv2.jpg/v1/fill/w_365,h_367,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Tetra-Neon.jpg"
+                            alt="Neón">
+                    </div>
+                    <h3>Neón - Paracheirodon innesi</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'neon')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="dulce">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/c85b6f_3f26feaf85e641ff958743a1656b3e18~mv2.webp/v1/fill/w_365,h_367,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/pez%20angel.webp"
+                            alt="Escalar">
+                    </div>
+                    <h3>Escalar - Pterophyllum scalare</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'escalar')">Mas Info.</a>
+                </article>
+
+                <!-- AGUA SALADA -->
+                <article class="pez-card" data-tipo="salada">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/nsplsh_72454d33634b384631706b~mv2_d_6000_4000_s_4_2.jpg/v1/fill/w_365,h_367,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Image%20by%20Rachel%20Hisko.jpg"
+                            alt="Pez payaso">
+                    </div>
+                    <h3>Pez Payaso - Amphiprion ocellaris</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'payaso')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="salada">
+                    <div class="pez-img">
+                        <img src="https://media.istockphoto.com/id/1202533319/es/foto/achilles-tang-acanthurus-achilles-peces-marinos.jpg?s=612x612&w=0&k=20&c=lJSfs_Op-sz2a6tfMVCUZpui2Gbh9GpRM56oro9-veo="
+                            alt="Acanthurus Achilles">
+                    </div>
+                    <h3>Cirujano Paleta - Paracanthurus hepatus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'cirujano')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="salada">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/427f9c_50ce0b194e394afe886888b0ad0d7c47~mv2.jpg/v1/fill/w_392,h_394,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Zebrasoma_Flavescens.jpg"
+                            alt="Pez Ángel amarillo">
+                    </div>
+                    <h3>Tang Amarillo - Zebrasoma flavescens</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'tang')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="salada">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/427f9c_b2e504cbd4744450832642dec115432e~mv2.jpg/v1/fill/w_392,h_394,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Siganus_magnificus_2.jpg"
+                            alt="Siganus Magnificus">
+                    </div>
+                    <h3>Siganus Magnificus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'siganus')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="salada">
+                    <div class="pez-img">
+                        <img src="https://mundomarinoacuario.com.co/wp-content/uploads/2025/02/leon-1.jpg"
+                            alt="Pez León">
+                    </div>
+                    <h3>Pez León - Pterois volitans</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'leon')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="salada">
+                    <div class="pez-img">
+                        <img src="https://static.wixstatic.com/media/90dfcc_f9858e50998542bf8e9b2339e493b6c4~mv2.png/v1/fill/w_736,h_581,al_c,q_90,enc_avif,quality_auto/90dfcc_f9858e50998542bf8e9b2339e493b6c4~mv2.png"
+                            alt="Pez Mandarín">
+                    </div>
+                    <h3>Pez Mandarín - Synchiropus splendidus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'mandarin')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="salada">
+                    <div class="pez-img">
+                        <img src="https://aquaorinoco.com/23447-thickbox_default/pomacanthus-imperator-pez-angel-emperador.jpg"
+                            alt="Pez Ángel Emperatriz">
+                    </div>
+                    <h3>Pez ángel emperador - Pomacanthus imperator</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'angel_emp')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="salada">
+                    <div class="pez-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Blue-green_Chromis%2C_Kiribati_imported_from_iNaturalist_photo_345755248.jpg/960px-Blue-green_Chromis%2C_Kiribati_imported_from_iNaturalist_photo_345755248.jpg"
+                            alt="Chromis Azul">
+                    </div>
+                    <h3>Chromis Azul - Chromis viridis</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'chromis')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="salada">
+                    <div class="pez-img">
+                        <img src="https://akuarium.com.ar/wp-content/uploads/2025/07/G-Loretto-1.jpg"
+                            alt="Gramma Real">
+                    </div>
+                    <h3>Gramma Real - Gramma loreto</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'gramma')">Mas Info.</a>
+                </article>
+
+                <!-- TROPICALES -->
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://animall.com.mx/cdn/shop/articles/el_pez_betta_7a746be3-6b39-41c5-a5e7-0d62f69a6cab_800x.jpg?v=1758686301"
+                            alt="Betta">
+                    </div>
+                    <h3>Betta - Betta splendens</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'betta')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://static.bainet.es/clip/713f8184-fb1b-436b-95a5-3cfa9caf0b80_16-9-aspect-ratio_1600w_0.webp"
+                            alt="Disco">
+                    </div>
+                    <h3>Disco - Symphysodon discus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'disco')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://aquainfo.nl/wp-content/uploads/2023/12/Mikrogeophagus-ramirezi-Ram.jpg"
+                            alt="Ramirezi">
+                    </div>
+                    <h3>Ramirezi - Mikrogeophagus ramirezi</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'ramirezi')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://www.nascapers.es/wp-content/uploads/2020/03/paracheirodon-axelrodi-2.jpg"
+                            alt="Tetra Cardenal">
+                    </div>
+                    <h3>Tetra Cardenal - Paracheirodon axelrodi</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'cardenal')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://eshalabs.com/wp-content/uploads/Oscar.jpg"
+                            alt="Óscar">
+                    </div>
+                    <h3>Óscar - Astronotus ocellatus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'oscar')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://www.swelluk.com/media/catalog/product/s/i/silver-arowana-osteoglossum-bicirrhosum_ebjklytrfm5udw6j.png?width=810&height=810&store=default&image-type=image"
+                            alt="Arowana">
+                    </div>
+                    <h3>Arowana - Osteoglossum bicirrhosum</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'arowana')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://laguiadelacuario.es/wp-content/uploads/2020/11/apistogramma_cacatuoidespda.jpg"
+                            alt="Apistograma">
+                    </div>
+                    <h3>Apistograma - Apistogramma cacatuoides</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'apisto')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://aquaorinoco.com/16058-thickbox_default/congo-tetra-phenacogrammus-interruptus-4-5cm.jpg"
+                            alt="Tetra Congo">
+                    </div>
+                    <h3>Tetra Congo - Phenacogrammus interruptus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'congo')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://scontent-eze1-2.xx.fbcdn.net/v/t1.6435-9/182135997_4070108199718611_2380021222012224898_n.jpg?stp=dst-jpg_p180x540_tt6&_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=duk5oRhyceAQ7kNvwELIJ4E&_nc_oc=AdqBmRX1OhNTX1PyQEVM-oIcT5jEB2mC0KoAmM8MNh1sIbiyNl9qPbprwX-Gm6Xp1wE&_nc_zt=23&_nc_ht=scontent-eze1-2.xx&_nc_gid=EIZ_aqteNVdezPxlvo0jYg&_nc_ss=7b289&oh=00_Af6lG05e968oVdIbJQXxqewBzWU_Px4hzm1YPH4vYzXGjQ&oe=6A310BFD"
+                            alt="Gurami Enano">
+                    </div>
+                    <h3>Gurami Enano - Trichogaster lalius</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'gurami_enano')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://acuariosplantados.com.ar/wp-content/uploads/2022/02/tetra_sarpae1-300x300.jpg"
+                            alt="Tetra Serpae">
+                    </div>
+                    <h3>Tetra Serpae - Hyphessobrycon eques</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'serpae')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Geophagus_brasiliensis.jpg/960px-Geophagus_brasiliensis.jpg"
+                            alt="Geófago Brasileño">
+                    </div>
+                    <h3>Geófago - Geophagus brasiliensis</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'geofago')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://simstropicalfish.co.uk/wp-content/uploads/2023/07/Altum-Angelfish-.png"
+                            alt="Altum">
+                    </div>
+                    <h3>Altum - Pterophyllum altum</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'altum')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/042/372/149/small/boeseman-s-rainbowfish-melanotaenia-boesemani-swimming-in-aquarium-water-wtih-green-algae-photo.jpg"
+                            alt="Arcoiris Boeseman">
+                    </div>
+                    <h3>Arcoiris - Melanotaenia boesemani</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'arcoiris')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Heros_notatus01.jpg/960px-Heros_notatus01.jpg"
+                            alt="Severo">
+                    </div>
+                    <h3>Severo - Heros severus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'severo')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="tropical">
+                    <div class="pez-img">
+                        <img src="https://aquaristsacrosscanada.com/cdn/shop/files/panda-corydoras.webp?v=1758660901"
+                            alt="Corydora Panda">
+                    </div>
+                    <h3>Corydora Panda - Corydoras panda</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'cory_panda')">Mas Info.</a>
+                </article>
+
+                <!-- CARACOLES -->
+                <article class="pez-card" data-tipo="caracol">
+                    <div class="pez-img">
+                        <img src="https://m.media-amazon.com/images/I/617wUp0p98L._AC_UL600_FMwebp_QL65_.jpg"
+                            alt="Mystery Snail Care">
+                    </div>
+                    <h3>Mystery Snail - Pomacea bridgesii</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'mystery')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="caracol">
+                    <div class="pez-img">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnVu0uKJSHxEkNMEar5Ws8hkLRI4FCKg0KLA&s"
+                            alt="Caracol Cebra">
+                    </div>
+                    <h3>Nerite - Neritina natalensis</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'nerite')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="caracol">
+                    <div class="pez-img">
+                        <img src="https://aquariumfishonline.com.au/wp-content/uploads/2022/06/Snail-Red-Ramshorn.jpg.webp" 
+                            alt="Caracol Planorbis">
+                    </div>
+                    <h3>Ramshorn - Planorbarius corneus</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'ramshorn')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="caracol">
+                    <div class="pez-img">
+                        <img src="https://xadm.acuarioplanet.com/public/images/productos/rm2O697d4e2b73f16.jpg" 
+                            alt="Caracol Manzana">
+                    </div>
+                    <h3>Caracol Manzana - Pomacea canaliculata</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'manzana')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="caracol">
+                    <div class="pez-img">
+                        <img src="https://qicmezavqdpiljacelva.supabase.co/storage/v1/object/public/images/creatures/Clea/helena/main.png" 
+                            alt="Caracol asesino">
+                    </div>
+                    <h3>Assassin Snail - Clea helena</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'assassin')">Mas Info.</a>
+                </article>
+
+                <!-- AXOLOTES -->
+                <article class="pez-card" data-tipo="axolote">
+                    <div class="pez-img">
+                        <img src="https://nas.er.usgs.gov/XIMAGESERVERX/2025/20251121085515.jpg" 
+                            alt="Ajolote salvaje">
+                    </div>
+                    <h3>Axolote Wild Type - Ambystoma mexicanum</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'axo_wild')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="axolote">
+                    <div class="pez-img">
+                        <img src="https://cdn.anews.mx/wp-content/uploads/2024/11/COMO-EVITAR-LA-EXTINCION-DEL-AJOLOTE-MEXICANO.jpg.webp" 
+                            alt="Axolote Leucístico">
+                    </div>
+                    <h3>Axolote Leucístico - Ambystoma mexicanum</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'axo_leuc')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="axolote">
+                    <div class="pez-img">
+                        <img src="https://scontent-eze1-2.cdninstagram.com/v/t51.82787-15/528476097_18062331293521326_259378380969834945_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ig_cache_key=MzY5NDgxMjkzNjMyNjA0Mzg5Ng%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=jwPI6Vri79gQ7kNvwHb3IzU&_nc_oc=AdrB4blXPMt5e-bIqSrDpi489xvYKMe_1QDCVQ-dHgpKP2EE1hjVy9PiUtCh7kXPCP4&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-eze1-2.cdninstagram.com&_nc_gid=3pjjodVGYE3G-jJ6KigVsA&_nc_ss=7a22e&oh=00_Af6-K73_JV7LZLfnVDA1CURCFp9CZ1yNtmh6vfJZLjhwRw&oe=6A0F6113" 
+                            alt="Axolote Albino">
+                    </div>
+                    <h3>Axolote Albino - Ambystoma mexicanum</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'axo_albino')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="axolote">
+                    <div class="pez-img">
+                        <img src="https://www.fish4everaquatics.com/cdn/shop/files/972E6436-099B-45F2-BA91-FC4F43F50637_360x.jpg?v=1770963120" 
+                            alt="Axolote Melanoid">
+                    </div>
+                    <h3>Axolote Melanoid - Ambystoma mexicanum</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'axo_melan')">Mas Info.</a>
+                </article>
+
+                <article class="pez-card" data-tipo="axolote">
+                    <div class="pez-img">
+                        <img src="https://www.vetcon.es/wp-content/uploads/2026/04/ajolote-dorado-ambystoma-mexicanum.jpg" 
+                            alt="Axolote Dorado">
+                    </div>
+                    <h3>Axolote Dorado - Ambystoma mexicanum</h3>
+                    <a href="#" class="btn-outline" onclick="mostrarInfo(event, 'axo_dorado')">Mas Info.</a>
+                </article>
+
+            </section>
+        </div>
+
+        <!-- PAGINACIÓN -->
+        <div class="atlas-paginacion" id="atlasPaginacion"></div>
+
+        <!-- MODAL INFO -->
+        <div class="modal-overlay" id="modalOverlay" onclick="cerrarModal()">
+            <div class="modal-box" onclick="event.stopPropagation()">
+                <button type="button" class="modal-close" aria-label="Cerrar" onclick="cerrarModal()"><i class="fa-solid fa-xmark"></i></button>
+                <div id="modalContenido"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <section class="social">
+            <p><span>SÍGUENOS</span></p>
+            <ul>
+                <li><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li><a href="https://youtu.be/r0_w_B4CiKk?si=z0jr0orjIwkdNP1f" target="_blank" rel="noopener noreferrer">Youtube</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            </ul>
+        </section>
+        <section class="contacto-footer">
+            <span>CONTÁCTANOS</span>
+            <p>Email: <a href="mailto:info@pirarenda.com">info@pirarenda.com</a></p>
+            <p>+54 12345678</p>
+        </section>
+        <section class="direccion">
+            <span>DIRECCIÓN</span>
+            <p>Av. Siempre Viva 1234<br>44100 Quilmes, Buenos Aires, Argentina</p>
+        </section>
+        <section>
+            <p>© 2026, Delcy Villalba | Pira Renda todos los derechos reservados.</p>
+        </section>
+    </footer>
+
+    <!-- WIDGET DE CHAT FLOTANTE -->
+    <div class="chat-widget" id="chatWidget">
+        <button type="button" class="chat-toggle" aria-label="Abrir chat" onclick="toggleChat()">
+            <i class="fa-solid fa-comment"></i>
+        </button>
+        <div class="chat-box" id="chatBox">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="chat-avatar"><i class="fa-solid fa-fish"></i></div>
+                    <div>
+                        <strong>Pira Renda</strong>
+                        <span class="chat-status"><span class="dot"></span> En línea</span>
+                    </div>
+                </div>
+                <button type="button" onclick="toggleChat()" class="chat-close" aria-label="Cerrar chat"><i 
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-bubble-area">
+                <div class="chat-bubble">
+                    <strong>¡Vamos a chatear!</strong>
+                    <p>Te responderemos tan pronto como podamos.</p>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" placeholder="Escribe un mensaje..." id="chatInput" onkeydown="enviarMensaje(event)">
+                <button type="button" onclick="enviarMensaje()" aria-label="Enviar mensaje"><i
+                        class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/js/script.js"></script>
+    <script src="/js/drawer.js"></script>
+    <script src="/js/atlas.js"></script>
+</body>
+
+</html>

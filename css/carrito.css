@@ -1,0 +1,228 @@
+/* =============================================
+   CARRITO.CSS
+   ============================================= */
+
+/* ---- WRAPPER ---- */
+.carrito-main {
+    padding-top: 70px;
+    min-height: 100vh;
+    background: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 60px;
+}
+
+/* ---- BREADCRUMB ---- */
+.carrito-main > .breadcrumb {
+    margin-left: -5%;
+    margin-right: -5%;
+}
+
+/* ---- TÍTULO ---- */
+.carrito-titulo {
+    font-size: 1.8rem;
+    color: #ff9800;
+    margin: 36px 0 24px;
+    text-transform: uppercase;
+}
+
+/* ---- LAYOUT DOS COLUMNAS ---- */
+.carrito-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* ---- LISTA DE ITEMS ---- */
+.carrito-items {
+    flex: 2;
+    border-top: 2px solid #000040;
+}
+
+.carrito-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Imagen */
+.carrito-item-img {
+    width: 62px;
+    height: 62px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: #f0f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #000040;
+    font-size: 1.3rem;
+}
+
+.carrito-item-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Nombre y precio unitario */
+.item-info {
+    flex: 1;
+}
+
+.item-nombre {
+    font-weight: 600;
+    color: #000040;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+
+.item-precio-unit {
+    font-size: 0.78rem;
+    color: #888;
+}
+
+/* Controles de cantidad */
+.item-controles {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cant-btn {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #000040;
+    background: transparent;
+    color: #000040;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s;
+}
+
+.cant-btn:hover {
+    background: #000040;
+    color: white;
+}
+
+/* Total y eliminar */
+.item-total {
+    font-weight: bold;
+    color: #ff9800;
+    font-size: 0.95rem;
+    min-width: 70px;
+    text-align: right;
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    color: #e00;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.btn-eliminar:hover {
+    color: #e00;
+}
+
+/* ---- RESUMEN DEL PEDIDO ---- */
+.carrito-resumen {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 22px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    position: sticky;
+    top: 90px;
+}
+
+.carrito-resumen h2 {
+    font-size: 1rem;
+    color: #000040;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.resumen-linea {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    color: #555;
+    padding: 7px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.resumen-linea.total {
+    font-weight: bold;
+    color: #000040;
+    font-size: 0.95rem;
+    border-bottom: none;
+    margin-top: 6px;
+}
+
+/* ---- BOTONES ---- */
+#btnFinalizar {
+    margin-top: 20px;
+}
+
+.btn-seguir {
+    display: block;
+    text-align: center;
+    margin-top: 48px;
+    font-size: 0.83rem;
+    font-weight: 600;
+    color: #000040;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.btn-seguir::before {
+    content: '← ';
+}
+
+.btn-seguir:hover {
+    color: #000040;
+}
+
+/* ---- CARRITO VACÍO ---- */
+.carrito-vacio {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 80px 0;
+    color: #ccc;
+}
+
+.carrito-vacio i {
+    font-size: 3.5rem;
+}
+
+.carrito-vacio p {
+    font-size: 1rem;
+    color: #888;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .carrito-layout {
+        flex-direction: column;
+    }
+
+    .carrito-resumen {
+        position: static;
+        width: 100%;
+    }
+}

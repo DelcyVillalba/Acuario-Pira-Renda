@@ -1,0 +1,255 @@
+/* =============================================
+   ATLAS.CSS
+   ============================================= */
+
+.atlas-main {
+    padding-top: 70px;
+    min-height: 100vh;
+    background: white;
+}
+
+.atlas-layout {
+    display: flex;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    align-items: flex-start;
+}
+
+/* Sidebar */
+.atlas-sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    padding-right: 28px;
+    position: sticky;
+    top: 90px;
+}
+
+.atlas-sidebar h1 {
+    font-size: 1.4rem;
+    color: #111;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.atlas-filtro-label {
+    font-size: 0.78rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.atlas-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.atlas-chips .btn-outline.active {
+    background: #000040;
+    color: #ff9800;
+}
+
+.atlas-sidebar .btn-carrito {
+    padding: 10px 14px;
+    font-size: 0.78rem;
+    width: auto;
+}
+
+.atlas-sidebar .btn-carrito:hover {
+    background: #e8e8e9;
+    color: #000040;
+}
+
+
+/* Grid Listado peces */
+.atlas-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.pez-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.pez-img {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    margin-bottom: 8px;
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.pez-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.pez-card:hover .pez-img img {
+    transform: scale(1.06);
+}
+
+.pez-card h3 {
+    flex: 1;
+    font-size: 0.8rem;
+    color: #111;
+    margin-bottom: 9px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+
+
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.open {
+    display: flex;
+}
+
+.modal-box {
+    background: white;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 460px;
+    width: 92%;
+    position: relative;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+    position: absolute;
+    top: 13px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #888;
+}
+
+.modal-box h2 {
+    font-size: 1.1rem;
+    color: #000040;
+    margin-bottom: 12px;
+}
+
+.modal-tags {
+    margin-bottom: 14px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 3px 11px;
+    border-radius: 12px;
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.tag.tag-tropical  { background: #fff3e0; color: #e65100; }
+.tag.tag-dulce     { background: #e0f0ff; color: #005a9e; }
+.tag.tag-salada    { background: #e0fff4; color: #006644; }
+.tag.tag-dulce-fr-a { background: #e8f5e9; color: #1b5e20; }
+.tag.tag-dulce-salada { background: #e8eaf6; color: #283593; }
+
+.modal-datos {
+    list-style: none;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.modal-datos li {
+    font-size: 0.86rem;
+    color: #444;
+}
+
+.modal-datos strong {
+    color: #000040;
+}
+
+.modal-box>p {
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.65;
+}
+
+/* Paginación */
+.atlas-paginacion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 28px 4% 40px;
+}
+
+.atlas-paginacion .pag-btn {
+    min-width: 38px;
+    height: 38px;
+    padding: 0 10px;
+    border: 2px solid #000040;
+    background: transparent;
+    color: #000040;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.atlas-paginacion .pag-btn:hover:not(.disabled) {
+    background: #000040;
+    color: #ff9800;
+}
+
+.atlas-paginacion .pag-btn.active {
+    background: #000040;
+    color: #ff9800;
+    pointer-events: none;
+}
+
+.atlas-paginacion .pag-btn.disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .atlas-layout {
+        flex-direction: column;
+    }
+
+    .atlas-sidebar {
+        width: 100%;
+        position: static;
+        padding-right: 0;
+    }
+
+    .atlas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .atlas-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
