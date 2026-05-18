@@ -1,0 +1,85 @@
+/* =============================================
+   ATENCION_CLIENTE.CSS
+   ============================================= */
+
+/* ---- WRAPPER DE PÁGINA ---- */
+.atencion-page {
+    padding-top: 70px;
+    min-height: 100vh;
+    background: white;
+}
+
+/* ---- CONTENIDO PRINCIPAL ---- */
+.atencion-main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 10% 80px;
+}
+
+/* ---- TÍTULO ---- */
+.atencion-titulo {
+    font-size: 1.8rem;
+    color: #ff9800;
+    margin-top: 8px;
+    margin-bottom: 36px;
+    text-transform: uppercase;
+}
+
+/* ---- SECCIONES ---- */
+.atencion-seccion {
+    margin-bottom: 34px;
+    padding-bottom: 34px;
+    border-bottom: 1px solid #eee;
+}
+
+.atencion-seccion:last-child {
+    border-bottom: none;
+}
+
+.atencion-seccion h2 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #000040;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.atencion-seccion p {
+    color: #444;
+    line-height: 1.78;
+    margin-bottom: 10px;
+    font-size: 0.92rem;
+}
+
+.atencion-seccion a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+/* ---- MÉTODO DE PAGO ---- */
+.metodos-pago {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.atencion-seccion ul + p {
+    margin-top: 12px;
+}
+
+.metodos-pago li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+    font-size: 0.92rem;
+}
+
+.metodos-pago li i {
+    color: #000040;
+    width: 20px;
+}
+
