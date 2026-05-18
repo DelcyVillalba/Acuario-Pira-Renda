@@ -66,7 +66,7 @@ function crearDrawerHTML() {
                 <strong id="drawerTotal">$0.00</strong>
             </div>
             <button class="drawer-btn-finalizar" onclick="finalizarCompra()">Finalizar compra</button>
-            <a href="/carrito.html" class="drawer-btn-vercarrito" onclick="cerrarDrawerCarrito()">Ver carrito</a>
+            <a href="carrito.html" class="drawer-btn-vercarrito" onclick="cerrarDrawerCarrito()">Ver carrito</a>
         </div>
     `;
   document.body.appendChild(drawer);

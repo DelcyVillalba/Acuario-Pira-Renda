@@ -9,19 +9,19 @@ let categoriaActual = "todos";
 
 // Mapa de páginas conocidas para construir el breadcrumb dinámico
 const PAGINAS_ORIGEN = {
-  "index":            { label: "Inicio",              href: "/index.html",              parent: null },
-  "productos_info":   { label: "Productos",           href: "/productos_info.html",     parent: null },
-  "cat_acuarios":     { label: "Acuarios y Peceras",  href: "/cat_acuarios.html",       parent: { label: "Productos", href: "/productos_info.html" } },
-  "cat_bombas":       { label: "Bombas",              href: "/cat_bombas.html",         parent: { label: "Productos", href: "/productos_info.html" } },
-  "cat_filtros":      { label: "Filtros",             href: "/cat_filtros.html",        parent: { label: "Productos", href: "/productos_info.html" } },
-  "cat_skimmers":     { label: "Skimmers",            href: "/cat_skimmers.html",       parent: { label: "Productos", href: "/productos_info.html" } },
-  "cat_aditivos":     { label: "Aditivos",            href: "/cat_aditivos.html",       parent: { label: "Productos", href: "/productos_info.html" } },
-  "cat_decoracion":   { label: "Decoración",          href: "/cat_decoracion.html",     parent: { label: "Productos", href: "/productos_info.html" } },
-  "atlas":            { label: "Atlas",               href: "/atlas.html",              parent: null },
-  "guia":             { label: "Guía",                href: "/guia.html",               parent: null },
-  "acerca_de":        { label: "Acerca de",           href: "/acerca_de.html",          parent: null },
-  "atencion_cliente": { label: "Atención al cliente", href: "/atencion_cliente.html",   parent: null },
-  "contacto":         { label: "Contacto",            href: "/contacto.html",           parent: null },
+  "index":            { label: "Inicio",              href: "index.html",              parent: null },
+  "productos_info":   { label: "Productos",           href: "productos_info.html",     parent: null },
+  "cat_acuarios":     { label: "Acuarios y Peceras",  href: "cat_acuarios.html",       parent: { label: "Productos", href: "productos_info.html" } },
+  "cat_bombas":       { label: "Bombas",              href: "cat_bombas.html",         parent: { label: "Productos", href: "productos_info.html" } },
+  "cat_filtros":      { label: "Filtros",             href: "cat_filtros.html",        parent: { label: "Productos", href: "productos_info.html" } },
+  "cat_skimmers":     { label: "Skimmers",            href: "cat_skimmers.html",       parent: { label: "Productos", href: "productos_info.html" } },
+  "cat_aditivos":     { label: "Aditivos",            href: "cat_aditivos.html",       parent: { label: "Productos", href: "productos_info.html" } },
+  "cat_decoracion":   { label: "Decoración",          href: "cat_decoracion.html",     parent: { label: "Productos", href: "productos_info.html" } },
+  "atlas":            { label: "Atlas",               href: "atlas.html",              parent: null },
+  "guia":             { label: "Guía",                href: "guia.html",               parent: null },
+  "acerca_de":        { label: "Acerca de",           href: "acerca_de.html",          parent: null },
+  "atencion_cliente": { label: "Atención al cliente", href: "atencion_cliente.html",   parent: null },
+  "contacto":         { label: "Contacto",            href: "contacto.html",           parent: null },
 };
 
 // Al cargar: guarda la página de origen en sessionStorage y aplica filtro por URL
@@ -89,10 +89,10 @@ function actualizarBreadcrumb() {
   const origen = JSON.parse(sessionStorage.getItem("tienda-origen") || "null");
   const camino = [];
 
-  camino.push({ label: "Inicio", href: "/index.html" });
+  camino.push({ label: "Inicio", href: "index.html" });
 
   // Si vino desde una categoría o página interna, agrega los pasos intermedios
-  if (origen && origen.href !== "/index.html") {
+  if (origen && origen.href !== "index.html") {
     if (origen.parent) {
       camino.push({ label: origen.parent.label, href: origen.parent.href });
     }
