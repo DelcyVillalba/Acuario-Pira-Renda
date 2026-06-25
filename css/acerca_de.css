@@ -1,0 +1,113 @@
+/* =============================================
+   ACERCA_DE.CSS
+   ============================================= */
+
+.acerca-main {
+    background: white;
+}
+
+.acerca-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    max-height: 580px;
+    overflow: hidden;
+}
+
+/* Breadcrumb — fila 1, columna 1 */
+.acerca-layout > .breadcrumb {
+    grid-column: 1;
+    grid-row: 1;
+    padding-top: 80px;
+    padding-left: 10%;
+}
+
+/* Columna texto — fila 2, columna 1 */
+.acerca-texto {
+    grid-column: 1;
+    grid-row: 2;
+    padding: 32px 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 18px;
+    text-align: left;
+}
+
+.acerca-texto h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ff9800;
+    text-transform: uppercase;
+}
+
+.acerca-texto p {
+    font-size: 0.92rem;
+    color: #444;
+    line-height: 1.78;
+}
+
+.acerca-texto .btn {
+    margin-top: 8px;
+}
+
+/* Columna imagen — abarca fila 1 y 2 */
+.acerca-imagen {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    overflow: hidden;
+    height: 550px;
+}
+
+.acerca-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .acerca-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .acerca-layout > .breadcrumb,
+    .acerca-texto,
+    .acerca-imagen {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .acerca-imagen {
+        display: none;
+    }
+
+    .acerca-texto {
+        padding: 40px 6%;
+    }
+}
+
+@media (max-width: 480px) {
+    .acerca-imagen {
+        display: none;
+    }
+
+    .acerca-texto {
+        padding: 28px 5%;
+        gap: 14px;
+    }
+
+    .acerca-texto h1 {
+        font-size: 1.6rem;
+    }
+
+    .acerca-texto p {
+        font-size: 0.88rem;
+    }
+}

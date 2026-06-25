@@ -1,0 +1,230 @@
+/* ================================================
+   PÁGINAS DE CATEGORÍA (cat_acuarios, cat_filtros…)
+   ================================================ */
+
+/* ---- WRAPPER ---- */
+.prodinfo-main {
+    background: white;
+}
+
+/* ---- BREADCRUMB ---- */
+/* Empuja el breadcrumb debajo del header fijo en páginas de categoría */
+.prodinfo-main > .breadcrumb:first-child {
+    padding-top: 80px;
+}
+
+/* ---- HERO DE CATEGORÍA ---- */
+.prodinfo-hero {
+    position: relative;
+    height: 470px;
+    overflow: hidden;
+}
+
+.prodinfo-hero img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(0.45);
+    display: block;
+}
+
+.prodinfo-hero-texto {
+    position: absolute;
+    bottom: 32px;
+    left: 5%;
+    color: white;
+}
+
+.prodinfo-hero-texto h1 {
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.15;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    color: white;
+}
+
+/* ---- INTRO ---- */
+.prodinfo-intro {
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    padding: 32px 6%;
+    text-align: center;
+    margin: 0;
+}
+
+.prodinfo-intro h2 {
+    font-size: 1.4rem;
+    color: #000040;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.prodinfo-intro p {
+    font-size: 0.92rem;
+    color: #555;
+    line-height: 1.75;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ---- SECCIONES INFO ---- */
+.prodinfo-secciones {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5% 60px;
+}
+
+.prodinfo-item {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 40px;
+    padding: 36px 0;
+    border-bottom: 1px solid #eee;
+    align-items: flex-start;
+}
+
+.prodinfo-item:last-child { border-bottom: none; }
+
+.prodinfo-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000040;
+    line-height: 1.4;
+}
+
+.prodinfo-item p,
+.prodinfo-item ul {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.75;
+}
+
+.prodinfo-item ul {
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* ---- CTA FINAL ---- */
+.prodinfo-cta {
+    background: #000040;
+    padding: 50px 5%;
+    text-align: center;
+    color: white;
+}
+
+.prodinfo-cta p {
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.75);
+    max-width: 600px;
+    margin: 0 auto 24px;
+    line-height: 1.7;
+}
+
+.prodinfo-cta .btn {
+    font-size: 1rem;
+    padding: 13px 36px;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .prodinfo-hero { height: 220px; }
+    .prodinfo-item { grid-template-columns: 1fr; gap: 12px; }
+    .prodinfo-hero-texto h1 { font-size: 1.6rem; }
+}
+
+
+/* ================================================
+   HUB DE CATEGORÍAS (productos_info.html)
+   ================================================ */
+
+/* ---- CONTENEDOR ---- */
+.hub-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 5%;
+}
+
+.hub-titulo {
+    font-size: 2rem;
+    color: #000040;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.hub-subtitulo {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+/* ---- GRID DE CARDS ---- */
+.hub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.hub-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hub-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.hub-card-img {
+    height: 180px;
+    overflow: hidden;
+}
+
+.hub-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.75);
+    transition: filter 0.3s, transform 0.3s;
+    display: block;
+}
+
+.hub-card:hover .hub-card-img img {
+    filter: brightness(0.6);
+    transform: scale(1.04);
+}
+
+.hub-card-body {
+    padding: 18px 20px;
+    background: white;
+}
+
+.hub-card-body h3 {
+    font-size: 1rem;
+    color: #000040;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.hub-card-body p {
+    font-size: 0.83rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+    .hub-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+    .hub-grid { grid-template-columns: 1fr; }
+}

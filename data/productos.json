@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "nombre": "Pecera esférica pequeña",
+    "precio": 140,
+    "categoria": "acuarios",
+    "imagen": "https://m.media-amazon.com/images/I/81Eslu-9e6L._AC_SL1500_.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Pecera Bettera Frente Curvo",
+    "precio": 300,
+    "categoria": "acuarios",
+    "imagen": "https://catycanar.vtexassets.com/arquivos/ids/162895"
+  },
+  {
+    "id": 3,
+    "nombre": "Acuario rectangular 60L",
+    "precio": 280,
+    "categoria": "acuarios",
+    "imagen": "https://umdale.com/cdn/shop/files/171850-fluval-fluval-spec-nano-acuario-negro-60l_fb3456a5-ecda-4451-87c4-22ea91f2b17e.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Nano acuario 20L",
+    "precio": 175,
+    "categoria": "acuarios",
+    "imagen": "https://images-fe.ssl-images-amazon.com/images/I/81diRsI9k1L._AC_UL495_SR435,495_.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Acuario negro con tapa 80L",
+    "precio": 380,
+    "categoria": "acuarios",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_657799-MLA99781131474_122025-F.webp"
+  },
+  {
+    "id": 6,
+    "nombre": "Acuario plantado 100L",
+    "precio": 520,
+    "categoria": "acuarios",
+    "imagen": "https://umdale.com/cdn/shop/files/176173-aqua-led-kit-aqua-led-100-con-filtro-interior-100l-con-mueble-mesa.jpg"
+  },
+  {
+    "id": 7,
+    "nombre": "Pecera hexagonal 30L",
+    "precio": 220,
+    "categoria": "acuarios",
+    "imagen": "https://bao-aquarium.com/cdn/shop/products/aquael-hexa-set-60l_1200x.jpg"
+  },
+  {
+    "id": 8,
+    "nombre": "Acuario panorámico 120L",
+    "precio": 650,
+    "categoria": "acuarios",
+    "imagen": "https://i.ebayimg.com/images/g/iL8AAeSwnVlpwcD7/s-l1600.webp"
+  },
+  {
+    "id": 9,
+    "nombre": "Acuario marino 150L",
+    "precio": 1200,
+    "categoria": "acuarios",
+    "imagen": "https://s.alicdn.com/@sc04/kf/H32141cc85f274a7ea38bba7fc52a0d9do.png_960x960q80.jpg"
+  },
+  {
+    "id": 10,
+    "nombre": "Acuario de pared 200L",
+    "precio": 890,
+    "categoria": "acuarios",
+    "imagen": "https://www.icasa.com/wp-content/uploads/2025/02/km8035-acuario-marino-con-sump-aqua-ocean-142-l_general_8297-400x400.jpg"
+  },
+  {
+    "id": 11,
+    "nombre": "Filtro canister 200L",
+    "precio": 240,
+    "categoria": "equipos",
+    "imagen": "https://www.acuariohelp.cl/wp-content/uploads/2020/04/3177-7144-Fluval-207-para-80-a-200-litros.jpg"
+  },
+  {
+    "id": 12,
+    "nombre": "Calentador digital 200W",
+    "precio": 340,
+    "categoria": "equipos",
+    "imagen": "https://static.wixstatic.com/media/ea71bb_4c16b9bce1764df48d2b536aac16c607~mv2_d_1920_1920_s_2.jpg"
+  },
+  {
+    "id": 13,
+    "nombre": "Bomba de aire silenciosa",
+    "precio": 120,
+    "categoria": "equipos",
+    "imagen": "https://img.kwcdn.com/product/fancy/8281e9ac-bb10-47d5-9835-7964588c0b71.jpg"
+  },
+  {
+    "id": 14,
+    "nombre": "Filtro interno 80L",
+    "precio": 95,
+    "categoria": "equipos",
+    "imagen": "https://resources.claroshop.com/medios-plazavip/s2/19732/3179618/616fee09f3740-fl7787-l-1600x1600.jpg"
+  },
+  {
+    "id": 15,
+    "nombre": "Skimmer proteico marino",
+    "precio": 380,
+    "categoria": "equipos",
+    "imagen": "https://submersa.es/cdn/shop/files/Skimmer-Regal-200-S-1.jpg"
+  },
+  {
+    "id": 16,
+    "nombre": "Lámpara LED espectro completo",
+    "precio": 280,
+    "categoria": "equipos",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWS-rLjHibk9CqedzqDSFhCbGp_h2Bkce4Xw&"
+  },
+  {
+    "id": 17,
+    "nombre": "Termómetro digital",
+    "precio": 45,
+    "categoria": "equipos",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_934206-MLA93576710510_102025-F.webp"
+  },
+  {
+    "id": 18,
+    "nombre": "Test de agua 5 en 1",
+    "precio": 65,
+    "categoria": "equipos",
+    "imagen": "https://acuariosplantados.com.ar/wp-content/uploads/2022/02/api_tiras_medicion.jpg"
+  },
+  {
+    "id": 19,
+    "nombre": "Kit CO2 difusor para plantado",
+    "precio": 195,
+    "categoria": "equipos",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_999676-MLB100979362307_122025-F.webp"
+  },
+  {
+    "id": 20,
+    "nombre": "Bomba de circulación 1000L/h",
+    "precio": 160,
+    "categoria": "equipos",
+    "imagen": "https://www.delnonnoaquario.com.ar/eShop/5911-large_default/bomba-sobo-aq-1000-1000-lh-15-w.jpg"
+  },
+  {
+    "id": 21,
+    "nombre": "Planta artificial pack x3",
+    "precio": 85,
+    "categoria": "plantas",
+    "imagen": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQbiRFjHduGN6XE_vfJZFzEOabWMKZ3M3WhIZrlyY2a1btDDEYQ76MQ90P0vLYobPxXZp1YjFQTkrmYNpcYt85p22rzFOmeZFNvxewGUQrbUvJ3nt86c_PaEw"
+  },
+  {
+    "id": 22,
+    "nombre": "Roca decorativa natural",
+    "precio": 160,
+    "categoria": "plantas",
+    "imagen": "https://www.nascapers.es/wp-content/uploads/2021/04/roca-dragon-stone-dark-1.jpg"
+  },
+  {
+    "id": 23,
+    "nombre": "Sustrato plantado 5kg",
+    "precio": 320,
+    "categoria": "plantas",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_643054-MLA31599004950_072019-F.webp"
+  },
+  {
+    "id": 24,
+    "nombre": "Madera de bogwood",
+    "precio": 190,
+    "categoria": "plantas",
+    "imagen": "https://m.media-amazon.com/images/S/aplus-media-library-service-media/3fedba45-90c7-44b0-ac96-27350dd71d7f.__CR0,0,362,453_PT0_SX362_V1___.jpg"
+  },
+  {
+    "id": 25,
+    "nombre": "Cueva de resina para peces",
+    "precio": 75,
+    "categoria": "plantas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTceR5TCukW_J96JEG6PLuSytclzqFLawFc-A"
+  },
+  {
+    "id": 26,
+    "nombre": "Arena de río blanca 5kg",
+    "precio": 110,
+    "categoria": "plantas",
+    "imagen": "https://i.ebayimg.com/images/g/MsUAAOSww~NmmzOm/s-l1600.webp"
+  },
+  {
+    "id": 27,
+    "nombre": "Musgo Java porción",
+    "precio": 60,
+    "categoria": "plantas",
+    "imagen": "https://madpeces.com/335-large_default/musgo-de-java-vesicularia-dubyana.jpg"
+  },
+  {
+    "id": 28,
+    "nombre": "Planta natural Anubias",
+    "precio": 95,
+    "categoria": "plantas",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_745145-MLA89814124053_082025-B.webp"
+  },
+  {
+    "id": 29,
+    "nombre": "Grava de colores 2kg",
+    "precio": 55,
+    "categoria": "plantas",
+    "imagen": "https://static.miscota.com/media/1/photos/products/020340/marina-grava-decorativa-arcoiris-2-kg-9_1.jpg"
+  },
+  {
+    "id": 30,
+    "nombre": "Castillo decorativo resina",
+    "precio": 80,
+    "categoria": "plantas",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_857453-MLA109041459083_032026-F.webp"
+  }
+]

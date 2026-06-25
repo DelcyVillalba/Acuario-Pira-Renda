@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin — Acuario Pira Renda</title>
+    <link rel="shortcut icon" href="../assets/img/pescado.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <header class="admin-header">
+        <div class="admin-header-inner">
+            <a href="../index.html" class="admin-logo">
+                <img src="../assets/img/logo-acuario.png" alt="Logo">
+                <span>Panel de Administración</span>
+            </a>
+            <a href="../index.html" class="btn-cerrar-admin">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                <span>Salir</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="admin-main">
+
+        <!-- TABS -->
+        <nav class="admin-tabs">
+            <button type="button" class="tab-btn active" data-tab="productos">
+                <i class="fa-solid fa-box"></i> Productos
+            </button>
+            <button type="button" class="tab-btn" data-tab="especies">
+                <i class="fa-solid fa-fish"></i> Especies
+            </button>
+        </nav>
+
+        <!-- PRODUCTOS -->
+        <section class="tab-content active" id="tab-productos">
+            <div class="tab-toolbar">
+                <h2>Productos <span class="badge" id="badgeProductos">0</span></h2>
+                <div class="toolbar-actions">
+                    <button type="button" class="btn-primary" onclick="abrirModalProducto()">
+                        <i class="fa-solid fa-plus"></i> Agregar producto
+                    </button>
+                    <button type="button" class="btn-secondary" onclick="exportarProductos()">
+                        <i class="fa-solid fa-download"></i> Exportar JSON
+                    </button>
+                </div>
+            </div>
+
+            <div class="filtro-bar">
+                <button type="button" class="filtro-chip active" data-cat="todos">Todos</button>
+                <button type="button" class="filtro-chip" data-cat="acuarios">Acuarios</button>
+                <button type="button" class="filtro-chip" data-cat="equipos">Equipos</button>
+                <button type="button" class="filtro-chip" data-cat="plantas">Plantas y Deco</button>
+            </div>
+
+            <div class="tabla-wrap">
+                <table class="admin-tabla" id="tablaProductos">
+                    <colgroup>
+                        <col class="col-img">
+                        <col class="col-nombre">
+                        <col class="col-precio">
+                        <col class="col-cat">
+                        <col class="col-acc">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Categoría</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyProductos"></tbody>
+                </table>
+                <div class="tabla-empty" id="emptyProductos" style="display:none">
+                    <i class="fa-solid fa-box-open"></i>
+                    <p>No hay productos todavía.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESPECIES -->
+        <section class="tab-content" id="tab-especies">
+            <div class="tab-toolbar">
+                <h2>Especies <span class="badge" id="badgeEspecies">0</span></h2>
+                <div class="toolbar-actions">
+                    <button type="button" class="btn-primary" onclick="abrirModalEspecie()">
+                        <i class="fa-solid fa-plus"></i> Agregar especie
+                    </button>
+                    <button type="button" class="btn-secondary" onclick="exportarEspecies()">
+                        <i class="fa-solid fa-download"></i> Exportar JSON
+                    </button>
+                </div>
+            </div>
+
+            <div class="filtro-bar">
+                <button type="button" class="filtro-chip active" data-tipo="todos">Todos</button>
+                <button type="button" class="filtro-chip" data-tipo="dulce">Agua Dulce</button>
+                <button type="button" class="filtro-chip" data-tipo="salada">Agua Salada</button>
+                <button type="button" class="filtro-chip" data-tipo="tropical">Tropicales</button>
+                <button type="button" class="filtro-chip" data-tipo="caracol">Caracoles</button>
+                <button type="button" class="filtro-chip" data-tipo="axolote">Axolotes</button>
+            </div>
+
+            <div class="tabla-wrap">
+                <table class="admin-tabla" id="tablaEspecies">
+                    <colgroup>
+                        <col class="col-img">
+                        <col class="col-nombre">
+                        <col class="col-tipo">
+                        <col class="col-params">
+                        <col class="col-acc">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Tipo</th>
+                            <th>Agua / Temp / pH</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyEspecies"></tbody>
+                </table>
+                <div class="tabla-empty" id="emptyEspecies" style="display:none">
+                    <i class="fa-solid fa-fish"></i>
+                    <p>No hay especies todavía.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <!-- MODAL PRODUCTO -->
+    <div class="modal-overlay" id="modalProducto" style="display:none" onclick="cerrarModalSiOverlay(event,'modalProducto')">
+        <div class="modal-box">
+            <button type="button" class="modal-close" onclick="cerrarModal('modalProducto')"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="tituloModalProducto">Producto</h3>
+            <form id="formProducto" class="modal-form">
+                <input type="hidden" id="pId">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" id="pNombre" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Precio ($)</label>
+                        <input type="number" id="pPrecio" min="0" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Categoría</label>
+                        <select id="pCategoria">
+                            <option value="acuarios">Acuarios y Peceras</option>
+                            <option value="equipos">Equipo para Acuario</option>
+                            <option value="plantas">Plantas y Decoraciones</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Imagen actual</label>
+                    <div class="img-preview-wrap">
+                        <img id="pImgPreview" src="../assets/img/pescado.png" alt="Vista previa" class="img-preview" onerror="this.src='../assets/img/pescado.png'">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Vista previa desde tu PC</label>
+                    <input type="file" id="pImgFile" accept="image/*" onchange="previewImagen(this, 'pImgPreview')">
+                    <small>Guardá la imagen en <code>assets/img/productos/</code> e ingresá la ruta en el campo de abajo.</small>
+                </div>
+                <div class="form-group">
+                    <label>URL o ruta de imagen</label>
+                    <input type="text" id="pImgUrl" placeholder="../assets/img/productos/mi-imagen.jpg" oninput="actualizarPreviewUrl('pImgUrl','pImgPreview')">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary" id="btnGuardarProducto">
+                        <i class="fa-solid fa-floppy-disk"></i> Guardar
+                    </button>
+                    <button type="button" class="btn-secondary" onclick="cerrarModal('modalProducto')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL PARA ESPECIE -->
+    <div class="modal-overlay" id="modalEspecie" style="display:none" onclick="cerrarModalSiOverlay(event,'modalEspecie')">
+        <div class="modal-box">
+            <button type="button" class="modal-close" onclick="cerrarModal('modalEspecie')"><i class="fa-solid fa-xmark"></i></button>
+            <h3 id="tituloModalEspecie">Especie</h3>
+            <form id="formEspecie" class="modal-form">
+                <input type="hidden" id="eIdOriginal">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>ID único (sin espacios)</label>
+                        <input type="text" id="eId" placeholder="Ej: neon" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de agua</label>
+                        <select id="eTipo">
+                            <option value="dulce">Agua Dulce</option>
+                            <option value="salada">Agua Salada</option>
+                            <option value="tropical">Tropical</option>
+                            <option value="caracol">Caracol</option>
+                            <option value="axolote">Axolote</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" id="eNombre" placeholder="Ej: Neón - Paracheirodon innesi" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Agua</label>
+                        <input type="text" id="eAgua" placeholder="Dulce">
+                    </div>
+                    <div class="form-group">
+                        <label>Temperatura</label>
+                        <input type="text" id="eTemp" placeholder="20-26°C">
+                    </div>
+                    <div class="form-group">
+                        <label>pH</label>
+                        <input type="text" id="ePh" placeholder="6.0-7.5">
+                    </div>
+                    <div class="form-group">
+                        <label>Tamaño</label>
+                        <input type="text" id="eTamanio" placeholder="4 cm">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <textarea id="eDesc" rows="3" placeholder="Descripción de la especie..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Imagen actual</label>
+                    <div class="img-preview-wrap">
+                        <img id="eImgPreview" src="../assets/img/pescado.png" alt="Vista previa" class="img-preview" onerror="this.src='../assets/img/pescado.png'">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Vista previa desde tu PC</label>
+                    <input type="file" id="eImgFile" accept="image/*" onchange="previewImagen(this, 'eImgPreview')">
+                    <small>Guardá la imagen en <code>assets/img/especies/</code> e ingresá la ruta en el campo de abajo.</small>
+                </div>
+                <div class="form-group">
+                    <label>URL o ruta de imagen</label>
+                    <input type="text" id="eImgUrl" placeholder="../assets/img/especies/mi-imagen.jpg" oninput="actualizarPreviewUrl('eImgUrl','eImgPreview')">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary" id="btnGuardarEspecie">
+                        <i class="fa-solid fa-floppy-disk"></i> Guardar
+                    </button>
+                    <button type="button" class="btn-secondary" onclick="cerrarModal('modalEspecie')">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL CONFIRMAR BORRADO -->
+    <div class="modal-overlay" id="modalConfirm" style="display:none" onclick="cerrarModalSiOverlay(event,'modalConfirm')">
+        <div class="modal-box modal-sm">
+            <h3><i class="fa-solid fa-triangle-exclamation"></i> Confirmar eliminación</h3>
+            <p id="confirmMsg">¿Seguro que querés eliminar este elemento?</p>
+            <div class="form-actions">
+                <button type="button" class="btn-danger" id="btnConfirmOk">Eliminar</button>
+                <button type="button" class="btn-secondary" onclick="cerrarModal('modalConfirm')">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
