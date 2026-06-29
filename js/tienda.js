@@ -9,15 +9,6 @@ let categoriaActual = "todos";
 let busquedaActual = "";
 let ordenOriginalTienda = [];
 
-function shuffle(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 // Mapa de páginas conocidas para construir el breadcrumb dinámico
 const PAGINAS_ORIGEN = {
   "index":            { label: "Inicio",              href: "index.html",              parent: null },
@@ -78,7 +69,7 @@ async function cargarProductos() {
       grid.appendChild(art);
     });
 
-    // Guardar orden original (por categoría A-Z del JSON)
+
     ordenOriginalTienda = Array.from(grid.querySelectorAll(".producto-card"));
 
   } catch (err) {
@@ -114,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  // Aplicar filtro si viene con ?categoria= en la URL
+
   const params = new URLSearchParams(window.location.search);
   const categoriaParam = params.get("categoria");
 
@@ -136,7 +127,7 @@ function filtrarCategoria(categoria) {
   categoriaActual = categoria;
   paginaActual = 1;
 
-  // Reordenar DOM: Todos → random, categoría específica → orden original
+  
   const grid = document.getElementById("productosGrid");
   if (grid && ordenOriginalTienda.length) {
     const orden = categoria === "todos"

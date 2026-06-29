@@ -3,9 +3,7 @@
 // =============================================
 const video = document.getElementById("video");
 if (video) {
-  video.play().catch(() => {
-    console.log("Autoplay bloqueado, esperando interacción.");
-  });
+  video.play().catch(() => {});
 }
 
 // =============================================

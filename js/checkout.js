@@ -238,10 +238,3 @@ function descargarRecibo() {
     window.print();
     setTimeout(() => { document.title = tituloOriginal; }, 1000);
 }
-
-function actualizarContadorCarrito() {
-    const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    const total   = carrito.reduce((acc, i) => acc + i.cantidad, 0);
-    const el      = document.getElementById('cart-count');
-    if (el) el.textContent = total;
-}

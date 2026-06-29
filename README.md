@@ -1,99 +1,166 @@
 # Acuario Pira Renda
 
-Proyecto integrador para el curso **Front-End -  JS para TT Adultos - 1C 2026** — Talento Tech.
+Proyecto integrador para el curso **Front-End JS — TT Adultos — 1C 2026** · Talento Tech
+
+---
 
 ## Descripción
 
-Sitio web de una tienda de acuarios llamada **Pira Renda** (nombre guaraní). El proyecto se encuentra **en desarrollo activo** y tiene como objetivo convertirse en un **e-commerce completo**. En su estado actual funciona como una vitrina virtual con catálogo, carrito de compras, atlas de peces interactivo y formulario de contacto. Las funcionalidades de autenticación de usuarios y pasarela de pagos están planificadas para las próximas etapas del proyecto.
+Sitio web de una tienda de acuarios llamada **Pira Renda** (nombre guaraní que significa **"Lugar de Peces"**). Funciona como un e-commerce estático con catálogo de productos, carrito de compras persistente, atlas interactivo de especies acuáticas y un panel de administración para gestionar el contenido.
+
+---
+
+## Tecnologías
+
+| Tecnología | Uso |
+|---|---|
+| HTML5 semántico | Estructura de todas las páginas |
+| CSS3 (archivos por página) | Estilos con Flexbox, Grid y Media Queries |
+| JavaScript vanilla | Interactividad, carrito, filtros, paginación |
+| Web Crypto API | Hash SHA-256 para credenciales del admin |
+| Font Awesome 6 | Iconografía |
+| Formspree | Envío del formulario de contacto |
+
+---
 
 ## Páginas
 
-| Página | Descripción |
-|--------|-------------|
-| `index.html` | Inicio con hero en video, destacados y accesos directos |
+### Sitio público
+
+| Archivo | Descripción |
+|---|---|
+| `index.html` | Inicio con hero en video, productos destacados y accesos directos |
 | `tienda.html` | Tienda con filtros por categoría, paginación y carrito |
-| `carrito.html` | Resumen del carrito con cálculo de total |
-| `atlas.html` | Atlas de peces con filtros y paginación (agua dulce, salada, tropical, caracoles, axolotes) |
-| `guia.html` | Guía de cuidados para principiantes |
+| `carrito.html` | Resumen del carrito con cálculo de totales |
+| `checkout.html` | Proceso de compra en 3 pasos con tarjeta visual |
+| `atlas.html` | Atlas de especies con filtros, paginación y ficha técnica modal |
+| `guia.html` | Guía de cuidados para principiantes con acordeón de preguntas |
 | `productos_info.html` | Hub de categorías de productos |
-| `cat_acuarios.html` | Detalle de acuarios y peceras |
-| `cat_bombas.html` | Detalle de bombas |
-| `cat_filtros.html` | Detalle de filtros |
-| `cat_skimmers.html` | Detalle de skimmers |
-| `cat_aditivos.html` | Detalle de aditivos |
-| `cat_decoracion.html` | Detalle de decoración |
+| `cat_acuarios.html` | Catálogo de acuarios y peceras |
+| `cat_bombas.html` | Catálogo de bombas |
+| `cat_filtros.html` | Catálogo de filtros |
+| `cat_skimmers.html` | Catálogo de skimmers |
+| `cat_aditivos.html` | Catálogo de aditivos |
+| `cat_decoracion.html` | Catálogo de plantas y decoración |
 | `acerca_de.html` | Historia y valores de la tienda |
 | `contacto.html` | Información de contacto, formulario y mapa |
 | `atencion_cliente.html` | Centro de atención al cliente |
 | `faq.html` | Preguntas frecuentes |
 | `envio.html` | Políticas de envío y devoluciones |
 
-## Tecnologías utilizadas
+### Panel de administración
 
-- **HTML5** semántico (`header`, `nav`, `main`, `section`, `footer`)
-- **CSS3** con archivos separados por página
-- **Flexbox** y **CSS Grid** para layouts responsivos
-- **Media Queries** para adaptación móvil
-- **JavaScript** vanilla para interactividad
-- **Font Awesome 6** para iconografía
-- **Formspree** para el envío del formulario de contacto
+| Archivo | Descripción |
+|---|---|
+| `login.html` | Inicio de sesión con autenticación por hash SHA-256 |
+| `admin/index.html` | Panel para gestionar productos y especies del catálogo |
+
+---
 
 ## Funcionalidades destacadas
 
-- Tienda con filtros por categoría, paginación (10 por página) y carrito persistente
-- Atlas de peces con 5 categorías filtrables, paginación y modal con ficha técnica de cada especie
-- Navegación con breadcrumb dinámico que rastrea la página de origen
-- Formulario de contacto con validación de campos en tiempo real
-- Widget de chat flotante
-- Diseño responsivo en todas las páginas
-- Hero en video en la página de inicio
+- **Carrito persistente** — se guarda en `localStorage` y se mantiene entre páginas y sesiones
+- **Drawer lateral** — carrito accesible desde cualquier página sin salir de ella
+- **Tienda** — filtros por categoría, búsqueda en tiempo real y paginación (10 por página)
+- **Atlas de especies** — 5 tipos filtrables (agua dulce, salada, tropical, caracoles, axolotes), paginación y modal con ficha técnica completa
+- **Checkout en 3 pasos** — datos personales → método de pago → confirmación con tarjeta animada
+- **Panel de administración** — altas, bajas y modificaciones de productos y especies; exportación de JSON actualizado
+- **Breadcrumb dinámico** — rastrea la página de origen para una navegación coherente
+- **Autenticación segura** — las credenciales del admin se almacenan como hash SHA-256.
+- **Formulario de contacto** — validación en tiempo real y envío vía Formspree
+- **Diseño responsivo** — adaptado a móvil, tablet y escritorio en todas las páginas
 
-## Formulario de contacto
-
-El formulario incluye campos de **nombre**, **correo electrónico**, **teléfono** y **mensaje**, con validación JavaScript del lado del cliente. El envío está configurado con **Formspree** (`https://formspree.io`).
-
-> Para activarlo debo reemplazar `YOUR_FORM_ID` en `contacto.html` con el ID del formulario creado en formspree.io.
+---
 
 ## Estructura de archivos
 
 ```
 /
 ├── index.html
+├── login.html
 ├── tienda.html
 ├── carrito.html
+├── checkout.html
 ├── atlas.html
 ├── guia.html
 ├── contacto.html
 ├── acerca_de.html
 ├── productos_info.html
-├── cat_*.html (x6)
+├── cat_acuarios.html
+├── cat_bombas.html
+├── cat_filtros.html
+├── cat_skimmers.html
+├── cat_aditivos.html
+├── cat_decoracion.html
 ├── atencion_cliente.html
 ├── faq.html
 ├── envio.html
+│
+├── admin/
+│   ├── index.html
+│   ├── admin.css
+│   └── admin.js
+│
 ├── css/
-│   ├── base.css
-│   └── [página].css
+│   ├── base.css          ← estilos globales y componentes compartidos
+│   ├── login.css
+│   ├── index.css
+│   ├── tienda.css
+│   ├── carrito.css
+│   ├── checkout.css
+│   ├── atlas.css
+│   ├── guia.css
+│   ├── contacto.css
+│   ├── acerca_de.css
+│   ├── atencion_cliente.css
+│   └── productos_info.css
+│
 ├── js/
-│   ├── script.js
+│   ├── utils.js          ← utilidades compartidas (shuffle)
+│   ├── script.js         ← comportamientos globales (video hero, menú, chat)
+│   ├── drawer.js         ← drawer del carrito y contador global
+│   ├── login.js
 │   ├── tienda.js
-│   ├── atlas.js
 │   ├── carrito.js
-│   ├── contacto.js
-│   └── ...
+│   ├── checkout.js
+│   ├── atlas.js
+│   ├── guia.js
+│   └── contacto.js
+│
+├── data/
+│   ├── productos.json    ← catálogo de productos
+│   └── especies.json     ← catálogo de especies del atlas
+│
 └── assets/
     └── img/
+        ├── logo-acuario.png
+        ├── pescado.png
+        ├── productos/
+        └── especies/
 ```
 
-## Próximas funcionalidades
+---
 
-- Login y registro de usuarios (Firebase Authentication)
-- Pasarela de pagos (MercadoPago u otro)
-- Historial de pedidos por usuario
-- Panel de administración de productos
+## Configuración
 
-## Curso
+### Formulario de contacto
 
-**Front-End JS — TT Adultos — 1C 2026**
-Talento Tech — Pre-Entrega Clase 08 "Git y GitHub"
+El formulario usa **Formspree**. Para activarlo, reemplazar `YOUR_FORM_ID` en `contacto.html` con el ID del formulario generado en [formspree.io](https://formspree.io).
 
-**Autora:** Delcy Villalba
+### Credenciales del panel de administración
+
+Las credenciales están en `js/login.js`. La contraseña se almacena como hash SHA-256. Para cambiarla, obtener el hash del nuevo valor desde la consola del navegador:
+
+```js
+crypto.subtle.digest('SHA-256', new TextEncoder().encode('nuevaContraseña'))
+  .then(b => console.log([...new Uint8Array(b)].map(x => x.toString(16).padStart(2,'0')).join('')))
+```
+
+Luego reemplazar el valor de `passwordHash` en `login.js`.
+
+---
+
+## Autora
+
+**Delcy Villalba**
+Curso Front-End JS — TT Adultos — 1C 2026 · Talento Tech
