@@ -104,13 +104,7 @@ document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
   dropdown.addEventListener("mouseenter", open);
   dropdown.addEventListener("mouseleave", scheduleClose);
 
-  // Click para móvil
-  dropdown.querySelector(".dropdown-toggle").addEventListener("click", (e) => {
-    if (window.innerWidth <= 900) {
-      e.preventDefault();
-      dropdown.classList.toggle("open");
-    }
-  });
+  // En móvil el submenu siempre está visible, no se necesita toggle
 
   // Cerrar al hacer click en un enlace del menú
   dropdown.querySelectorAll(".dropdown-menu a").forEach((link) => {

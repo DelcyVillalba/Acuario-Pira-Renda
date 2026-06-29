@@ -937,12 +937,13 @@ footer>section:last-child {
     }
 
     .dropdown-menu {
+        display: block;
         position: static;
         transform: none;
         box-shadow: none;
         border-radius: 0;
-        background: rgba(255, 255, 255, 0.08);
-        padding: 4px 0 4px 16px;
+        background: transparent;
+        padding: 0;
         animation: none;
     }
 
@@ -951,9 +952,10 @@ footer>section:last-child {
     }
 
     .dropdown-menu li a {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 0.85rem;
-        padding: 8px 12px;
+        color: white;
+        font-size: 1rem;
+        padding: 12px 0;
+        font-weight: 500;
     }
 }
 
