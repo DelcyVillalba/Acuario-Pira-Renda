@@ -1,10 +1,18 @@
-# Acuario Pira Renda
+<img src="assets/img/Acuario_Pira_Renda.png" alt="Front-End JS Banner" width="800">
 
-Proyecto integrador para el curso **Front-End JS — TT Adultos — 1C 2026** · Talento Tech
+
+### Proyecto integrador para el curso **Front-End JS — TT Adultos — 1C 2026** · Talento Tech
+
+<img src="assets/img/Front_JS_Banner.webp" alt="Front-End JS Banner" width="800">
 
 ---
 
-## Descripción
+🔗 [Ver sitio en vivo](https://delcyvillalba.github.io/Acuario-Pira-Renda/)
+
+
+---
+
+### Descripción
 
 Sitio web de una tienda de acuarios llamada **Pira Renda** (nombre guaraní que significa **"Lugar de Peces"**). Funciona como un e-commerce estático con catálogo de productos, carrito de compras persistente, atlas interactivo de especies acuáticas y un panel de administración para gestionar el contenido.
 
@@ -134,14 +142,14 @@ Sitio web de una tienda de acuarios llamada **Pira Renda** (nombre guaraní que 
 └── assets/
     └── img/
         ├── logo-acuario.png
-        ├── pescado.png
-        ├── productos/
-        └── especies/
+        └── pescado.png          ← placeholder cuando una imagen no carga
 ```
 
 ---
 
 ## Configuración
+
+> Las imágenes de productos y especies se cargan desde URLs externas definidas en `data/productos.json` y `data/especies.json`. Para usar imágenes locales, guardarlas en `assets/img/` y actualizar las rutas en los JSON correspondientes.
 
 ### Formulario de contacto
 
