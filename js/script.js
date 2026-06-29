@@ -88,25 +88,17 @@ function enviarMensaje(event) {
 // DROPDOWN NAVBAR
 // =============================================
 document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
-  let closeTimer = null;
+  const toggle = dropdown.querySelector(".dropdown-toggle");
 
-  const open = () => {
-    clearTimeout(closeTimer);
-    dropdown.classList.add("open");
-  };
+  toggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isOpen = dropdown.classList.contains("open");
+    // Cerrar cualquier otro dropdown abierto
+    document.querySelectorAll(".nav-dropdown.open").forEach((d) => d.classList.remove("open"));
+    if (!isOpen) dropdown.classList.add("open");
+  });
 
-  const scheduleClose = () => {
-    closeTimer = setTimeout(() => {
-      dropdown.classList.remove("open");
-    }, 350);
-  };
-
-  dropdown.addEventListener("mouseenter", open);
-  dropdown.addEventListener("mouseleave", scheduleClose);
-
-  // En móvil el submenu siempre está visible, no se necesita toggle
-
-  // Cerrar al hacer click en un enlace del menú
+  // Cerrar al navegar a un ítem del menú
   dropdown.querySelectorAll(".dropdown-menu a").forEach((link) => {
     link.addEventListener("click", () => {
       dropdown.classList.remove("open");
@@ -114,10 +106,9 @@ document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
   });
 });
 
+// Cerrar al hacer click fuera
 document.addEventListener("click", (e) => {
   if (!e.target.closest(".nav-dropdown")) {
-    document
-      .querySelectorAll(".nav-dropdown")
-      .forEach((d) => d.classList.remove("open"));
+    document.querySelectorAll(".nav-dropdown").forEach((d) => d.classList.remove("open"));
   }
 });
