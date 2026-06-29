@@ -98,7 +98,7 @@ document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
   const scheduleClose = () => {
     closeTimer = setTimeout(() => {
       dropdown.classList.remove("open");
-    }, 150);
+    }, 350);
   };
 
   dropdown.addEventListener("mouseenter", open);
